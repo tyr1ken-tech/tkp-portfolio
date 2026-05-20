@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Download, Mail } from 'lucide-react';
 
 const Hero = () => {
+    const titles = [
+        "UI/UX Designer",
+        "Web Developer",
+        "Graphic Designer",
+        "Layout Artist"
+    ];
+
+    const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+    const [currentText, setCurrentText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        let timer;
+        const fullText = titles[currentTitleIndex];
+
+        if (!isDeleting && currentText === fullText) {
+            timer = setTimeout(() => setIsDeleting(true), 1500);
+        } else if (isDeleting && currentText === '') {
+            timer = setTimeout(() => {
+                setIsDeleting(false);
+                setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+            }, 300);
+        } else {
+            const typingSpeed = isDeleting ? 50 : 100;
+            timer = setTimeout(() => {
+                setCurrentText(fullText.substring(0, currentText.length + (isDeleting ? -1 : 1)));
+            }, typingSpeed);
+        }
+
+        return () => clearTimeout(timer);
+    }, [currentText, isDeleting, currentTitleIndex]);
+
     return (
         <section className="w-full flex flex-col lg:flex-row items-center justify-between min-h-screen pt-32 pb-12 px-6 md:px-12 lg:px-24 mx-auto max-w-[88rem]">
             {/* Left Column */}
@@ -21,8 +53,9 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <h3 className="font-poppins font-medium text-[32px] md:text-[48px] tracking-[-0.02em] text-[#00FFE1] mt-2 leading-tight">
-                        UI/UX Designer
+                    <h3 className="font-poppins font-medium text-[32px] md:text-[48px] tracking-[-0.02em] text-[#00FFE1] mt-2 leading-tight min-h-[40px] md:min-h-[60px]">
+                        {currentText}
+                        <span className="animate-pulse font-light">|</span>
                     </h3>
 
                     <p className="font-poppins font-light text-[16px] md:text-[20px] tracking-[-0.02em] text-white leading-relaxed max-w-[550px] mt-4">
