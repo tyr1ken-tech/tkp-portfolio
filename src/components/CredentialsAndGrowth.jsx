@@ -10,6 +10,7 @@ import cert6 from '../assets/cert6.jpg';
 import cert7 from '../assets/cert7.jpg';
 import cert8 from '../assets/cert8.jpg';
 import cert9 from '../assets/cert9.jpg';
+import cert10 from '../assets/cert10.png';
 
 // Certificate data with category mapping
 const certificates = [
@@ -75,6 +76,13 @@ const certificates = [
     image: cert9,
     category: "Startup & Innovation",
     description: "Hands-on training in evaluating market demands and validating customer needs for early-stage startup concepts."
+  },
+  {
+    id: 10,
+    title: "BSIT & BSIS Capstone Project Exhibit 2026: Project Presentation",
+    image: cert10,
+    category: "Academic & Research",
+    description: "Engagement in the research exhibition and presentation of the AquaCare IoT-based real-time water quality monitoring system."
   }
 ];
 
