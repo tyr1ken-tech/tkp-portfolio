@@ -122,7 +122,7 @@ const GetInTouch = () => {
         <div className="flex flex-col items-center gap-1 text-center">
           <p className="font-poppins font-regular text-[13px] sm:text-[14px] lg:text-[15px] tracking-[-0.02em] text-white/80">
             Designed and Developed by{" "}
-            <span className="text-[#00FFE1] font-semibold">Tyrone Ken Pareja</span>
+            <span className="text-[#00FF7B] font-semibold">Tyrone Ken Pareja</span>
           </p>
           <p className="font-poppins font-regular text-[13px] sm:text-[14px] lg:text-[15px] tracking-[-0.02em] text-white/80">
             All Rights Reserved
