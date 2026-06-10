@@ -6,6 +6,7 @@ import About from './components/About';
 import TechStack from './components/TechStack';
 import Portfolio from './components/Portfolio';
 import Experience from './components/Experience';
+import CredentialsAndGrowth from './components/CredentialsAndGrowth';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       <TechStack />
       <Portfolio />
       <Experience />
+      <CredentialsAndGrowth />
     </main>
   )
 }
