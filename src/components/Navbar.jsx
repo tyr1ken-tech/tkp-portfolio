@@ -87,7 +87,7 @@ const Navbar = () => {
 
                 {/* Right: Moon Icon, Bookmark Icon & Mobile Menu Toggle */}
                 <div className="flex items-center gap-2 md:gap-4">
-                    <button
+                    {/* <button
                         onClick={handleBookmark}
                         className={`flex items-center justify-center transition-colors p-2 lg:p-1.5 rounded-full hover:bg-white/5 ${
                             isBookmarked 
@@ -100,14 +100,14 @@ const Navbar = () => {
                         <Bookmark 
                             className={`w-6 h-6 lg:w-5 lg:h-5 ${isBookmarked ? 'fill-current' : ''}`} 
                         />
-                    </button>
+                    </button> */}
 
-                    <button
+                    {/* <button
                         className="flex items-center justify-center text-white hover:text-[#00FFE1] transition-colors p-2 lg:p-1.5 rounded-full hover:bg-white/5"
                         aria-label="Toggle Dark/Light Mode"
                     >
                         <Moon className="w-6 h-6 lg:w-5 lg:h-5" />
-                    </button>
+                    </button> */}
 
                     <button
                         className="md:hidden flex items-center justify-center text-white p-2 hover:bg-white/5 rounded-full transition-colors"
