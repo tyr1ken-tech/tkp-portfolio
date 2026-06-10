@@ -1,67 +1,78 @@
 import React, { useState } from 'react';
 
+// Import certificate images as Vite modules
+import cert1 from '../assets/cert1.jpg';
+import cert2 from '../assets/cert2.jpg';
+import cert3 from '../assets/cert3.jpg';
+import cert4 from '../assets/cert4.jpg';
+import cert5 from '../assets/cert5.jpg';
+import cert6 from '../assets/cert6.jpg';
+import cert7 from '../assets/cert7.jpg';
+import cert8 from '../assets/cert8.jpg';
+import cert9 from '../assets/cert9.jpg';
+
 // Certificate data with category mapping
 const certificates = [
   {
     id: 1,
     title: "Cisco Packet Tracer Completion",
-    image: "/src/assets/cert1.jpg",
+    image: cert1,
     category: "Technology & IT",
     description: "Demonstration of foundational networking skills and practical experience with the Cisco Packet Tracer platform."
   },
   {
     id: 2,
     title: "Level App 2.0: Startup Participation",
-    image: "/src/assets/cert2.jpg",
+    image: cert2,
     category: "Startup & Innovation",
     description: "Engagement in product exhibition and technopreneurship pitching for the EaseNova startup project."
   },
   {
     id: 3,
     title: "Level App 2.0: Top 15 Finalist",
-    image: "/src/assets/cert3.jpg",
+    image: cert3,
     category: "Startup & Innovation",
     description: "Recognition for delivering a high-quality entrepreneurial presentation and placing among the top 15 competitive startup pitches."
   },
   {
     id: 4,
     title: "IT Specialist Career Transition Seminar",
-    image: "/src/assets/cert4.jpg",
+    image: cert4,
     category: "Technology & IT",
     description: "Training on mapping the professional pathway from an academic science practitioner to a specialized IT professional."
   },
   {
     id: 5,
     title: "Advanced Seminar: Color Theory in Graphic Design",
-    image: "/src/assets/cert5.jpg",
+    image: cert5,
     category: "Technology & IT",
     description: "Academic study of the visual psychology, theory, and practical implementation of color in digital layout and user experience design."
   },
   {
     id: 6,
     title: "ICARI 2025: International Conference Participation",
-    image: "/src/assets/cert6.jpg",
+    image: cert6,
     category: "Academic & Research",
     description: "Academic engagement with global research developments in sustainable technologies and resilient agricultural innovations."
   },
   {
     id: 7,
     title: "ICARI 2025: Research Paper Presenter",
-    image: "/src/assets/cert7.jpg",
+    image: cert7,
     category: "Academic & Research",
     description: "International recognition for co-authoring and presenting the IoT-driven AquaCare system research paper at an agricultural innovation conference."
   },
   {
     id: 8,
     title: "BUGSAI TBI: Lean Canvas Development Lab",
-    image: "/src/assets/cert8.jpg",
+    image: cert8,
     category: "Startup & Innovation",
     description: "Focused workshop training on building, refining, and structuring a lean business model canvas for a startup venture."
   },
   {
     id: 9,
     title: "BUGSAI TBI: Customer Validation Lab",
-    image: "/src/assets/cert9.jpg",
+    image: cert9,
     category: "Startup & Innovation",
     description: "Hands-on training in evaluating market demands and validating customer needs for early-stage startup concepts."
   }
