@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import TechStack from './components/TechStack';
+import Portfolio from './components/Portfolio';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <About />
       <TechStack />
+      <Portfolio />
     </main>
   )
 }
