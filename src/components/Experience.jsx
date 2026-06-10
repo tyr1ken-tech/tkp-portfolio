@@ -1,6 +1,11 @@
 import React from 'react';
+import { ArrowUp } from 'lucide-react';
 
 const Experience = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section id="experience" className="relative w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 lg:px-20 mx-auto max-w-[88rem] flex flex-col items-center z-10">
       {/* Top Header */}
@@ -68,6 +73,15 @@ const Experience = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={handleScrollToTop}
+        className="fixed bottom-8 right-8 p-3 rounded-full bg-[#00FFE1] text-[#181B1F] hover:bg-[#00FF7B] transition-all duration-300 group shadow-lg hover:shadow-xl z-40"
+        title="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+      </button>
     </section>
   );
 };

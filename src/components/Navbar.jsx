@@ -1,11 +1,59 @@
 import React, { useState } from 'react';
-import { Moon, Menu, X } from 'lucide-react';
+import { Moon, Menu, X, Bookmark } from 'lucide-react';
 
 const Navbar = () => {
     const [active, setActive] = useState('Home');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
 
-    const navLinks = ['Home', 'About', 'Projects', 'Experience', 'Contact'];
+    // Map nav links to section IDs
+    const navLinksData = [
+        { name: 'Home', id: 'hero' },
+        { name: 'About', id: 'about' },
+        { name: 'Projects', id: 'portfolio' },
+        { name: 'Experience', id: 'experience' },
+        { name: 'Contact', id: 'contact' }
+    ];
+
+    // Handle smooth scroll to section
+    const handleNavClick = (linkName, sectionId) => {
+        setActive(linkName);
+        
+        if (sectionId === 'hero') {
+            // Scroll to top for Home
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            // Scroll to section by ID
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // Close mobile menu after clicking
+        setIsMobileMenuOpen(false);
+    };
+
+    // Handle bookmark functionality
+    const handleBookmark = () => {
+        if (typeof window !== 'undefined') {
+            if (isBookmarked) {
+                // Remove bookmark
+                setIsBookmarked(false);
+                alert('Removed from bookmarks');
+            } else {
+                // Add bookmark
+                if (window.sidebar && window.sidebar.addPanel) {
+                    window.sidebar.addPanel(document.title, window.location.href, '');
+                } else if (window.external && window.external.AddFavorite) {
+                    window.external.AddFavorite(window.location.href, document.title);
+                } else {
+                    alert(`To bookmark this page, press ${navigator.userAgent.indexOf('Mac') !== -1 ? 'Cmd+D' : 'Ctrl+D'}`);
+                }
+                setIsBookmarked(true);
+            }
+        }
+    };
 
     return (
         <div
@@ -22,23 +70,38 @@ const Navbar = () => {
 
                 {/* Center: Navigation Links (Desktop) */}
                 <ul className="hidden md:flex items-center justify-center gap-1 lg:gap-4">
-                    {navLinks.map((item) => (
-                        <li key={item}>
+                    {navLinksData.map((link) => (
+                        <li key={link.name}>
                             <button
-                                onClick={() => setActive(item)}
-                                className={`font-poppins font-medium text-[20px] lg:text-[15px] tracking-[-0.02em] transition-all duration-300 px-4 py-2 lg:px-3 lg:py-1.5 ${active === item
+                                onClick={() => handleNavClick(link.name, link.id)}
+                                className={`font-poppins font-medium text-[20px] lg:text-[15px] tracking-[-0.02em] transition-all duration-300 px-4 py-2 lg:px-3 lg:py-1.5 ${active === link.name
                                     ? 'text-[#00FFE1] bg-[#00FFE1]/10 rounded-[7px]'
                                     : 'text-white hover:text-[#00FFE1]/70 hover:bg-white/5 rounded-[7px]'
                                     }`}
                             >
-                                {item}
+                                {link.name}
                             </button>
                         </li>
                     ))}
                 </ul>
 
-                {/* Right: Moon Icon & Mobile Menu Toggle */}
+                {/* Right: Moon Icon, Bookmark Icon & Mobile Menu Toggle */}
                 <div className="flex items-center gap-2 md:gap-4">
+                    <button
+                        onClick={handleBookmark}
+                        className={`flex items-center justify-center transition-colors p-2 lg:p-1.5 rounded-full hover:bg-white/5 ${
+                            isBookmarked 
+                                ? 'text-[#00FFE1]' 
+                                : 'text-white hover:text-[#00FFE1]'
+                        }`}
+                        aria-label="Bookmark this page"
+                        title={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
+                    >
+                        <Bookmark 
+                            className={`w-6 h-6 lg:w-5 lg:h-5 ${isBookmarked ? 'fill-current' : ''}`} 
+                        />
+                    </button>
+
                     <button
                         className="flex items-center justify-center text-white hover:text-[#00FFE1] transition-colors p-2 lg:p-1.5 rounded-full hover:bg-white/5"
                         aria-label="Toggle Dark/Light Mode"
@@ -61,19 +124,16 @@ const Navbar = () => {
                     }`}
             >
                 <ul className="flex flex-col p-4 gap-2">
-                    {navLinks.map((item) => (
-                        <li key={item}>
+                    {navLinksData.map((link) => (
+                        <li key={link.name}>
                             <button
-                                onClick={() => {
-                                    setActive(item);
-                                    setIsMobileMenuOpen(false);
-                                }}
-                                className={`w-full text-left font-poppins font-medium text-[18px] tracking-[-0.02em] transition-all duration-300 px-4 py-3 ${active === item
+                                onClick={() => handleNavClick(link.name, link.id)}
+                                className={`w-full text-left font-poppins font-medium text-[18px] tracking-[-0.02em] transition-all duration-300 px-4 py-3 ${active === link.name
                                     ? 'text-[#00FFE1] bg-[#00FFE1]/10 rounded-[7px]'
                                     : 'text-white hover:text-[#00FFE1]/70 hover:bg-white/5 rounded-[7px]'
                                     }`}
                             >
-                                {item}
+                                {link.name}
                             </button>
                         </li>
                     ))}

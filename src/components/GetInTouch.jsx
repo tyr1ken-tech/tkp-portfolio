@@ -7,28 +7,28 @@ const contactLinks = [
     id: 1,
     name: "EMAIL",
     icon: Mail,
-    href: "mailto:tyronekenpareja@example.com",
+    href: "mailto:pareja.tyroneken@gmail.com",
     label: "Email"
   },
   {
     id: 2,
     name: "LINKEDIN",
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/tyronekenpareja",
+    href: "https://www.linkedin.com/in/pareja-tyrone-ken-2a1865415",
     label: "LinkedIn"
   },
   {
     id: 3,
     name: "GITHUB",
     icon: FaGithub,
-    href: "https://github.com/tyronekenpareja",
+    href: "https://github.com/tyr1ken-tech",
     label: "GitHub"
   },
   {
     id: 4,
     name: "FIGMA",
     icon: FaFigma,
-    href: "https://figma.com/@tyronekenpareja",
+    href: "https://www.figma.com/@parejatyroneken",
     label: "Figma"
   }
 ];

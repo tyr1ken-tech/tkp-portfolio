@@ -3,6 +3,12 @@ import tkpImage from '../assets/tkp image portfolio.png';
 import { ArrowRight } from 'lucide-react';
 
 const About = () => {
+  const handleScrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <section id="about" className="relative w-full bg-transparent py-16 lg:py-20 px-6 md:px-12 lg:px-20 mx-auto max-w-[88rem] flex flex-col items-center z-10">
       {/* Top Header */}
@@ -80,7 +86,7 @@ const About = () => {
               </div>
             ))}
 
-            <button className="flex items-center gap-1.5 group cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap ml-auto">
+            <button onClick={handleScrollToContact} className="flex items-center gap-1.5 group cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap ml-auto">
               <span className="font-poppins font-medium text-[14px] lg:text-[14px] tracking-[-0.02em] text-white border-b border-[#00FFE1] pb-[1px]">
                 GET IN TOUCH
               </span>
