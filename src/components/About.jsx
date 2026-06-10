@@ -20,11 +20,11 @@ const About = () => {
       </div>
 
       {/* Two Column Layout */}
-      <div className="w-full grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-10 lg:gap-16 items-center">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-10 lg:gap-16 items-start">
         
         {/* Left Column - Image */}
-        <div className="w-full flex justify-center lg:justify-end items-center">
-          <div className="relative w-full max-w-[380px] lg:max-w-[400px] aspect-[4/5] lg:aspect-[3/4] rounded-[20px] overflow-hidden shadow-2xl">
+        <div className="w-full flex justify-center lg:justify-end">
+          <div className="relative w-full aspect-[4/5] lg:aspect-[3/4] rounded-[20px] overflow-hidden shadow-2xl">
             <img 
               src={tkpImage} 
               alt="Tyrone Ken Pareja" 
@@ -34,12 +34,12 @@ const About = () => {
         </div>
 
         {/* Right Column - Content */}
-        <div className="w-full flex flex-col justify-center py-2">
-          <h3 className="font-poppins font-semibold text-[24px] sm:text-[28px] lg:text-[32px] leading-[1.3] tracking-[-0.02em] text-white mb-4 lg:mb-5">
+        <div className="w-full flex flex-col">
+          <h3 className="font-poppins font-semibold text-[24px] sm:text-[28px] lg:text-[32px] leading-[1.3] tracking-[-0.02em] text-white mb-4 lg:mb-5 mt-[-4px]">
             Building responsive web applications with a focus on <span className="text-[#00FFE1]">accessible design</span> and <span className="text-[#00FF7B]">real-time systems.</span>
           </h3>
           
-          <p className="font-poppins font-medium text-[15px] sm:text-[16px] lg:text-[15px] leading-relaxed lg:leading-[1.6] tracking-[-0.02em] text-white/90 mb-6 lg:mb-8 max-w-[600px]">
+          <p className="font-poppins font-medium text-[15px] sm:text-[16px] lg:text-[15px] leading-relaxed lg:leading-[1.6] tracking-[-0.02em] text-white/90 mb-6 lg:mb-8">
             I'm <span className="text-[#00FFE1]">Tyrone Ken Pareja</span>, a Web Developer, UI/UX Designer, and Graphic Designer based in the Philippines. I bridge the gap between frontend development and layout design to create digital experiences that are technically sound and visually intuitive, ranging from custom UI modules to hardware-integrated software platforms.
           </p>
 

@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import TechStack from './components/TechStack';
 import Portfolio from './components/Portfolio';
+import Experience from './components/Experience';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       <About />
       <TechStack />
       <Portfolio />
+      <Experience />
     </main>
   )
 }

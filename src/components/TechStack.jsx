@@ -44,7 +44,7 @@ const TechStack = () => {
       </div>
 
       {/* Tech Stack Grid */}
-      <div className="w-full flex flex-wrap justify-center gap-4 lg:gap-6 max-w-[1100px]">
+      <div className="w-full flex flex-wrap justify-center gap-4 lg:gap-6">
         {techStack.map((tech, index) => {
           const Icon = tech.icon;
           return (
