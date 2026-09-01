@@ -11,6 +11,9 @@ import cert7 from '../assets/cert7.jpg';
 import cert8 from '../assets/cert8.jpg';
 import cert9 from '../assets/cert9.jpg';
 import cert10 from '../assets/cert10.png';
+import cert11 from '../assets/cert11.png';
+import cert12 from '../assets/cert12.png';
+import cert13 from '../assets/cert13.png';
 
 // Certificate data with category mapping
 const certificates = [
@@ -83,6 +86,33 @@ const certificates = [
     image: cert10,
     category: "Academic & Research",
     description: "Engagement in the research exhibition and presentation of the AquaCare IoT-based real-time water quality monitoring system."
+  },
+  {
+    id: 11,
+    certificateType: "Certificate of Completion",
+    title: "Introduction to Figma Course",
+    image: cert11,
+    category: "Technology & IT",
+    description: "Successful completion of the online course covering UI/UX design fundamentals, digital prototyping, and user interface workflows in Figma.",
+    caption: "Successful completion of the online course covering UI/UX design fundamentals, digital prototyping, and user interface workflows in Figma."
+  },
+  {
+    id: 12,
+    certificateType: "Certificate of Participation",
+    title: "PSITE XI: CyberWISE Seminar-Workshop",
+    image: cert12,
+    category: "Technology & IT",
+    description: "Recognition of active participation and engagement in the PSITE XI seminar-workshop on advancing cybersecurity competence, held at National University Davao.",
+    caption: "Recognition of active participation and engagement in the PSITE XI seminar-workshop on advancing cybersecurity competence, held at National University Davao."
+  },
+  {
+    id: 13,
+    certificateType: "Certificate of Appearance",
+    title: "PSITE XI: CyberWISE Appearance",
+    image: cert13,
+    category: "Academic & Research",
+    description: "Official acknowledgment of attendance and representation at the regional PSITE XI monthly seminar-workshop on cybersecurity held in Davao City.",
+    caption: "Official acknowledgment of attendance and representation at the regional PSITE XI monthly seminar-workshop on cybersecurity held in Davao City."
   }
 ];
 
